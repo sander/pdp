@@ -4,7 +4,7 @@ class PdpController < ApplicationController
     source = File.read name
     #markdown = Redcarpet::Markdown.new PDPFile
     renderer = Redcarpet::Render::HTML.new with_toc_data: true, hard_wrap: true
-    markdown = Redcarpet::Markdown.new renderer, footnotes: true
+    markdown = Redcarpet::Markdown.new renderer, footnotes: true, strikethrough: true
     html = markdown.render source
     @pdp = html.html_safe
   end

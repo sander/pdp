@@ -12,4 +12,4 @@ $ ->
       when 'Success' then 'success'
       when 'Waiting' then 'waiting'
       else remove = false
-    $status.find('p').text($status.find('p').text().replace(/[^\.]*\./, '')) if remove
+    $status.find('p').html($status.find('p').html().replace(/[^\.]*\./, '')) if remove
