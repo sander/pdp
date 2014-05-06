@@ -113,6 +113,9 @@ article {
     strong {
       text-decoration: underline;
     }
+    del {
+      opacity: .5;
+    }
   }
   footer {
     @include span-columns(5 omega);
@@ -127,6 +130,9 @@ article {
         content: 'Status: ';
       }
       */
+      a {
+        text-decoration: underline;
+      }
     }
     &:before {
       @extend .glyphicon;
