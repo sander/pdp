@@ -13,6 +13,11 @@ $ ->
     $goal = $(@).nextUntil('h2, hr').andSelf().wrapAll('<section class="goal">').parent()
     $header = $(@).find('+ p').andSelf().wrapAll('<header>').parent()
     $main = $(@).parent().nextUntil('h3').wrapAll('<main>').parent()
+    
+    [areas, _, means, _] = $header.find('p').text().split(/( \(|\))/)
+    $p = $header.find('p').empty()
+    $('<span class="areas">').text(areas).appendTo $p
+    $('<span class="means">').text(means).appendTo $p if means
 
     remove = true
     $status = $goal.find('h3').nextAll().andSelf().wrapAll('<footer>').parent()

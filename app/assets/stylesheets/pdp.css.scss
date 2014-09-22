@@ -116,6 +116,9 @@ article {
       @include pull(1);
       margin-top: $gutter-width * 2;
       //text-align: right;
+      .areas, .means {
+        display: block;
+      }
     }
   }
   main {
