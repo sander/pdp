@@ -90,6 +90,13 @@ article {
   }
 }
 
+// Intro
+h1 + .part {
+  p {
+    margin-bottom: $gutter-width;
+  }
+}
+
 .goal {
   @include span-columns(6);
   padding: ($gutter-width / 2);
