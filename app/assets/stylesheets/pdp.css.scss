@@ -10,9 +10,12 @@ $grid-padding: $gutter-width;
 
 $header-size: 16pt;
 
-$very-dark-color: hsl(210, 13, 30);
-$dark-color: hsl(207, 12, 37);
-$light-color: hsl(176, 23, 82);
+//$very-dark-color: hsl(210, 13, 30);
+//$dark-color: hsl(207, 12, 37);
+//$light-color: hsl(176, 23, 82);
+$dark-color: #c7581b;
+$very-dark-color: darken($dark-color, 10%);
+$light-color: #acacac;
 
 @include border-box-sizing;
 
@@ -74,6 +77,7 @@ article {
   a {
     color: $dark-color;
     text-decoration: none;
+    font-weight: 500;
   }
   hr {
     display: none;
@@ -131,6 +135,7 @@ h1 + .part {
   page-break-inside: avoid;
   border-top: 1px dotted;
   header {
+    text-align: center;
     h2 {
       font-family: Merriweather, serif;
       font-size: $header-size;
