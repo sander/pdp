@@ -1,11 +1,14 @@
 @import 'bootstrap';
 @import 'compass/reset';
 @import 'susy';
+@import url(http://fonts.googleapis.com/css?family=Merriweather:900,700);
 
 $total-columns: 6;
 $column-width: 64pt;
 $gutter-width: 16pt;
 $grid-padding: $gutter-width;
+
+$header-size: 16pt;
 
 $very-dark-color: hsl(210, 13, 30);
 $dark-color: hsl(207, 12, 37);
@@ -22,20 +25,27 @@ $light-color: hsl(176, 23, 82);
 body {
   @include container;
   font-family: 'Fira Sans', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 9pt;
   line-height: $gutter-width;
   margin-bottom: $gutter-width;
 }
 
-header {
+body > header {
+  text-align: center;
+  //@include span-columns(5 omega);
+  margin: 2 * $gutter-width 0 0 0;
   h1, h2 {
     color: $light-color;
-    font-weight: 600;
+    //font-weight: 600;
+    font-weight: 400;
     font-size: inherit;
-    text-transform: lowercase;
-    margin: $gutter-width 0;
+    text-transform: uppercase;
+    margin: 0;
+    display: inline;
   }
+  h1:after { content: ' '; }
+  /*
   h1 {
     @include span-columns(1);
   }
@@ -43,19 +53,22 @@ header {
     @include span-columns(5 omega);
     margin-right: -2.5pt;
   }
+  */
 }
 
 article {
   h1 {
-    font-size: 18pt;
+    font-size: $header-size;
     line-height: 18pt;
-    font-weight: 300;
+    font-weight: 700;
     color: $very-dark-color;
-    @include span-columns(5 omega);
-    margin: $gutter-width 0;
+    //@include span-columns(5 omega);
+    margin: 0 0 $gutter-width 0;
+    font-family: Merriweather, serif;
+    text-align: center;
   }
   h1 + p {
-    @include span-columns(5 omega);
+    //@include span-columns(5 omega);
   }
 
   a {
@@ -77,8 +90,17 @@ article {
 .part {
   clear: both;
   //margin: 0 (-$gutter-width / 2);
-  @include span-columns(6);
   padding: $gutter-width / 2;
+  
+}
+
+// Parts in between
+h1 + .part ~ .part:not(:last-child) {
+  @include span-columns(6);
+  border-top: 1px solid;
+  > p {
+    margin-bottom: .5 * $gutter-width;
+  }
   > p, > ul {
     @include span-columns(5 omega);
     padding: 0;//-$gutter-width / 2;
@@ -97,16 +119,23 @@ h1 + .part {
   }
 }
 
+// Last
+.part:last-child {
+  border-top: 1px solid;
+}
+
 .goal {
   @include span-columns(6);
   padding: ($gutter-width / 2);
   margin: 0 (-$gutter-width / 2);
   page-break-inside: avoid;
+  border-top: 1px dotted;
   header {
     h2 {
-      font-size: 18pt;
+      font-family: Merriweather, serif;
+      font-size: $header-size;
       line-height: 27pt;
-      font-weight: 100;
+      font-weight: 700;
       color: $dark-color;
       @include span-columns(1);
       clear: both;
