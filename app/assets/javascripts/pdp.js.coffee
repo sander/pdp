@@ -6,7 +6,7 @@ $ ->
       $('<h2>').text(version)
     ]).prependTo('body')
   
-  $('hr').each ->
+  $('article h1, hr').each ->
     $part = $(@).nextUntil('hr').wrapAll('<section class="part">').parent()
     
   $('article h2').each ->

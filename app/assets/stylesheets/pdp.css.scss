@@ -52,19 +52,10 @@ article {
     font-weight: 300;
     color: $very-dark-color;
     @include span-columns(5 omega);
-    //@include pre(1);
     margin: $gutter-width 0;
-    margin-right: -2.5pt;
-    //margin-right: 2.5pt;
   }
   h1 + p {
     @include span-columns(5 omega);
-    margin-right: -2.5pt;
-    //margin-right: 2.5pt;
-    //margin-left: space(1);
-    //@include pre(1);
-    //margin-left: span-columns(1 alpha);
-    //margin: $gutter-width 0;
   }
 
   a {
