@@ -1,4 +1,14 @@
 $ ->
+  $('h1 + p').each ->
+    [name, version] = $(@).remove().text().split(/\n\s*/g)
+    $('<header>').html([
+      $('<h1>').text(name),
+      $('<h2>').text(version)
+    ]).prependTo('body')
+  
+  $('hr').each ->
+    $part = $(@).nextUntil('hr').wrapAll('<section class="part">').parent()
+    
   $('article h2').each ->
     $goal = $(@).nextUntil('h2, hr').andSelf().wrapAll('<section class="goal">').parent()
     $header = $(@).find('+ p').andSelf().wrapAll('<header>').parent()

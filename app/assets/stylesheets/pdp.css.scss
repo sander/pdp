@@ -41,6 +41,7 @@ header {
   }
   h2 {
     @include span-columns(5 omega);
+    margin-right: -2.5pt;
   }
 }
 
@@ -51,13 +52,15 @@ article {
     font-weight: 300;
     color: $very-dark-color;
     @include span-columns(5 omega);
-    @include pre(1);
+    //@include pre(1);
     margin: $gutter-width 0;
-    margin-right: 2.5pt;
+    margin-right: -2.5pt;
+    //margin-right: 2.5pt;
   }
   h1 + p {
     @include span-columns(5 omega);
-    margin-right: 2.5pt;
+    margin-right: -2.5pt;
+    //margin-right: 2.5pt;
     //margin-left: space(1);
     //@include pre(1);
     //margin-left: span-columns(1 alpha);
@@ -71,7 +74,7 @@ article {
   hr {
     display: none;
     + p {
-      clear: boht;
+      clear: both;
       @include span-columns(5 omega);
       @include pre(1);
       margin-top: $gutter-width;
@@ -80,9 +83,25 @@ article {
   }
 }
 
-.goal {
+.part {
+  clear: both;
+  //margin: 0 (-$gutter-width / 2);
   @include span-columns(6);
   padding: $gutter-width / 2;
+  > p, > ul {
+    @include span-columns(5 omega);
+    padding: 0;//-$gutter-width / 2;
+    margin-right: 2.5pt;
+  }
+  > ul {
+    margin-right: 2.5pt + $gutter-width;
+    padding-left: $gutter-width;
+  }
+}
+
+.goal {
+  @include span-columns(6);
+  padding: ($gutter-width / 2);
   margin: 0 (-$gutter-width / 2);
   page-break-inside: avoid;
   header {
@@ -95,6 +114,9 @@ article {
       clear: both;
       //text-align: right;
       margin-top: 0;
+      &:before {
+        //content: 'Goal ';
+      }
     }
     p {
       font-size: 8pt;
