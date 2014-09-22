@@ -1,7 +1,7 @@
 class PdpController < ApplicationController
   def index
     name = '/Users/sander/Dropbox/M1.2/PDP/PDP.md'
-    name = '/home/sander/www/pdp.md' unless File.exist? name
+    name = '/home/sander/www/pdp-m12.md' unless File.exist? name
     source = File.read name
     renderer = Redcarpet::Render::HTML.new with_toc_data: true, hard_wrap: true
     markdown = Redcarpet::Markdown.new renderer, footnotes: true, strikethrough: true

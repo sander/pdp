@@ -1,7 +1,7 @@
 @import 'bootstrap';
 @import 'compass/reset';
 @import 'susy';
-@import url(http://fonts.googleapis.com/css?family=Merriweather:900,700);
+@import url(http://fonts.googleapis.com/css?family=Merriweather:900,700|Fira+Sans:400,500,700);
 
 $total-columns: 6;
 $column-width: 64pt;
@@ -37,7 +37,7 @@ body {
 body > header {
   text-align: center;
   //@include span-columns(5 omega);
-  margin: 2 * $gutter-width 0 0 0;
+  margin: 2 * $gutter-width 0 ($gutter-width / 2) 0;
   h1, h2 {
     color: $light-color;
     //font-weight: 600;
@@ -78,6 +78,10 @@ article {
     color: $dark-color;
     text-decoration: none;
     font-weight: 500;
+    &:hover {
+      color: $very-dark-color;
+      text-decoration: underline;
+    }
   }
   hr {
     display: none;
@@ -101,7 +105,7 @@ article {
 // Parts in between
 h1 + .part ~ .part:not(:last-child) {
   @include span-columns(6);
-  border-top: 1px solid;
+  border-top: 2px solid $dark-color;
   > p {
     margin-bottom: .5 * $gutter-width;
   }
@@ -109,6 +113,7 @@ h1 + .part ~ .part:not(:last-child) {
     @include span-columns(5 omega);
     padding: 0;//-$gutter-width / 2;
     margin-right: 2.5pt;
+    color: $dark-color;
   }
   > ul {
     margin-right: 2.5pt + $gutter-width;
@@ -125,7 +130,7 @@ h1 + .part {
 
 // Last
 .part:last-child {
-  border-top: 1px solid;
+  border-top: 2px solid $dark-color;
 }
 
 .goal {
@@ -133,7 +138,7 @@ h1 + .part {
   padding: ($gutter-width / 2);
   margin: 0 (-$gutter-width / 2);
   page-break-inside: avoid;
-  border-top: 1px dotted;
+  border-top: 1px dotted $dark-color;
   header {
     text-align: center;
     h2 {
@@ -160,6 +165,9 @@ h1 + .part {
       .areas, .means {
         display: block;
       }
+      .areas {
+        font-weight: 600;
+      }
     }
   }
   main {
@@ -173,22 +181,27 @@ h1 + .part {
     del {
       opacity: .5;
     }
+    ol {
+      li {
+        margin-left: $gutter-width;
+      }
+      list-style: lower-alpha;
+    }
   }
   footer {
     @include span-columns(5 omega);
+    padding-top: $gutter-width / 2;
     h3 {
       display: none;
     }
     p {
       font-weight: 500;
       font-size: 8pt;
-      /*
       &:before {
         content: 'Status: ';
       }
-      */
       a {
-        text-decoration: underline;
+        //text-decoration: underline;
       }
     }
     &:before {
