@@ -27,7 +27,7 @@ $light-color: #acacac;
 
 body {
   @include container;
-  font-family: 'Fira Sans', sans-serif;
+  font-family: 'Fira Sans', 'Fira Sans OT', sans-serif;
   font-weight: 400;
   font-size: 9pt;
   line-height: $gutter-width;
@@ -99,7 +99,6 @@ article {
   clear: both;
   //margin: 0 (-$gutter-width / 2);
   padding: $gutter-width / 2;
-  
 }
 
 // Parts in between
@@ -229,4 +228,28 @@ h1 + .part {
   &.waiting footer:before {
     @extend .glyphicon-time;
   }
+}
+
+.no-details {
+  .part {
+    border-top: none !important;
+    padding-top: 0;
+  }
+  .part > p {
+    display: none !important;
+  }
+  .rest {
+    display: none;
+  }
+  main ol {
+    display: none;
+  }
+}
+
+.toggle-details {
+  text-transform: uppercase;
+  position: absolute;
+  top: $gutter-width;
+  right: $gutter-width;
+  cursor: pointer;
 }
