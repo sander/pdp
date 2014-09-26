@@ -26,6 +26,9 @@ $light-color: #acacac;
   .toggle-details {
     display: none;
   }
+  a[href]:after {
+    content: none !important;
+  }
 }
 
 body {
