@@ -23,6 +23,9 @@ $light-color: #acacac;
   * {
     -webkit-print-color-adjust: exact;
   }
+  a[href]:after {
+    content: none !important;
+  }
 }
 
 body {

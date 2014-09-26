@@ -1,7 +1,7 @@
 Pdp::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  config.action_controller.relative_url_root = '/pdp'
+  config.action_controller.relative_url_root = '/pdp-m12'
 
   # Code is not reloaded between requests.
   config.cache_classes = true
